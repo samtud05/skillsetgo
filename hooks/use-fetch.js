@@ -6,18 +6,24 @@ const useFetch = (cb) => {
   const [loading, setLoading] = useState(null);
   const [error, setError] = useState(null);
 
-  const fn = async (...args) => {
+  const fn = async (...args) =>
+    {
     setLoading(true);
     setError(null);
 
-    try {
+    try 
+    {
       const response = await cb(...args);
       setData(response);
       setError(null);
-    } catch (error) {
+    }
+     catch (error)
+      {
       setError(error);
       toast.error(error.message);
-    } finally {
+    } 
+    finally 
+    {
       setLoading(false);
     }
   };
@@ -26,3 +32,9 @@ const useFetch = (cb) => {
 };
 
 export default useFetch;
+
+
+
+
+
+

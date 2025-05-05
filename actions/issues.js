@@ -9,7 +9,6 @@ export async function getIssuesForSprint(sprintId) {
   if (!userId || !orgId) {
     throw new Error("Unauthorized");
   }
-
   const issues = await db.issue.findMany({
     where: { sprintId: sprintId },
     orderBy: [{ status: "asc" }, { order: "asc" }],
@@ -21,6 +20,7 @@ export async function getIssuesForSprint(sprintId) {
 
   return issues;
 }
+
 
 export async function createIssue(projectId, data) {
   const { userId, orgId } = auth();
@@ -37,6 +37,7 @@ export async function createIssue(projectId, data) {
   });
 
   const newOrder = lastIssue ? lastIssue.order + 1 : 0;
+
 
   const issue = await db.issue.create({
     data: {

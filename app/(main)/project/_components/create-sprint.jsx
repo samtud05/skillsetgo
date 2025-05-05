@@ -93,8 +93,8 @@ export default function SprintCreationForm({
                 <Input
                   id="name"
                   {...register("name")}
-                  readOnly
-                  className="bg-slate-950"
+                  //readOnly
+                  className="bg-white-200"
                 />
                 {errors.name && (
                   <p className="text-red-500 text-sm mt-1">
@@ -114,7 +114,7 @@ export default function SprintCreationForm({
                       <PopoverTrigger asChild>
                         <Button
                           variant="outline"
-                          className={`w-full justify-start text-left font-normal bg-slate-950 ${
+                          className={`w-full justify-start text-left font-normal bg-white-200 ${
                             !dateRange && "text-muted-foreground"
                           }`}
                         >
@@ -129,17 +129,18 @@ export default function SprintCreationForm({
                         </Button>
                       </PopoverTrigger>
                       <PopoverContent
-                        className="w-auto bg-slate-900"
+                        className="w-auto bg-slate-100"
                         align="start"
                       >
                         <DayPicker
+                      
                           classNames={{
-                            chevron: "fill-blue-500",
-                            range_start: "bg-blue-700",
-                            range_end: "bg-blue-700",
-                            range_middle: "bg-blue-400",
+                            chevron: "bg-white-600",
+                            range_start: "bg-white-200",
+                            range_end: "bg-grey-700",
+                            range_middle: "bg-grey-100",
                             day_button: "border-none",
-                            today: "border-2 border-blue-700",
+                            today: "border-2 border-black-700",
                           }}
                           mode="range"
                           disabled={[{ before: new Date() }]}

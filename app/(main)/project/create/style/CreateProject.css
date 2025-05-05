@@ -1,0 +1,18 @@
+        .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+.custom-table th, 
+.custom-table td {
+    border: 2px solid #e1d6d6; /* Adds border to each cell */
+    padding: 8px; /* Adds some spacing */
+    text-align: left;
+}
+
+.custom-table tr:nth-child(even) {
+    background-color: #bebebe74;
+}

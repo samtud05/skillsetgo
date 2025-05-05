@@ -46,6 +46,17 @@ model Sprint {
   updatedAt DateTime @updatedAt
 }
 
+
+
+model Employee {
+  id              String   @id @default(uuid())
+  name            String
+  skills          String[] // This ensures skills are stored as an array
+  experienceLevel String
+  workload        Int
+}
+
+
 model Issue {
   id          String     @id @default(cuid())
   title       String
@@ -85,4 +96,10 @@ enum IssuePriority {
   MEDIUM
   HIGH
   URGENT
+}
+
+enum experienceLevelArray{
+  Mid
+  Senior
+  Junior
 }
