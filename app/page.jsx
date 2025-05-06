@@ -1,5 +1,7 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
+
 import {
   ChevronRight,
   Layout,
@@ -10,6 +12,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import ChatIcon from "@/components/bot/chaticon";
+import ChatWindow from "@/components/bot/chatwindow";
 
 // const faqs = [
 //   {
@@ -66,6 +70,11 @@ import Image from "next/image";
 // ];
 
 export default function Home() {
+  const [isChatOpen, setIsChatOpen] = useState(false)
+
+  const toggleChat = () => {
+    setIsChatOpen(!isChatOpen)
+  }
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -99,6 +108,7 @@ export default function Home() {
             Learn More
           </Button> */}
         </Link>
+       
       </section>
 
      
